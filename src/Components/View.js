@@ -1,8 +1,15 @@
 import Fleet from "./Fleet";
+import HeroBoard from "./HeroBoard";
 import { GAME_STATE } from "../Helpers/gameConstants";
+import "../Styles/view.css";
+
+
 function View({
     gameState,
     setGameState,
+    heroState,
+    setHeroState,
+
     unplacedShips,
     selectShipToPlace
 }) {
@@ -11,10 +18,13 @@ function View({
         switch(gameState) {
             case GAME_STATE.SHIP_PLACEMENT:
                 return (
-                    <Fleet 
-                        unplacedShips={unplacedShips}
-                        selectShipToPlace={selectShipToPlace}
-                    />
+                    <div className="view">
+                        <Fleet 
+                            unplacedShips={unplacedShips}
+                            selectShipToPlace={selectShipToPlace}
+                        />
+                        <HeroBoard heroState={heroState}/>
+                    </div>
                 );
             default:
                 return (

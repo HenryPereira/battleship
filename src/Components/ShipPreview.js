@@ -8,6 +8,7 @@ function ShipPreview({
         <div className="preview-box" key={i}></div>
         );
     })
+
     return (
         <div
             id={`${ship.name}-preview`}

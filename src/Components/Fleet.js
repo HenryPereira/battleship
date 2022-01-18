@@ -1,18 +1,18 @@
 import ShipPreview from "./ShipPreview";
-import "../Styles/Fleet.css";
+import "../Styles/fleet.css";
 
 function Fleet({
     unplacedShips,
     selectShipToPlace
 }) {
-    let fleetDisplay = unplacedShips.map((ship) => {
+    let renderFleet = unplacedShips.map((ship) => {
         return (
         <ShipPreview ship={ship} selectShipToPlace={selectShipToPlace}/>
         );
     })
     return (
         <div className="fleet">
-            {fleetDisplay}
+            {renderFleet}
         </div>
     );
 }
